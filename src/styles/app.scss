@@ -1,0 +1,153 @@
+﻿
+/*TABLE LAYOUT*/
+body {
+    .page {
+        .tables {
+            table {
+                width: 90%;
+                margin:20px auto 20px auto;
+                border: 1px solid #ccc;
+                thead {
+                    tr.header {
+                        td {
+                            height: 50px;
+                        }
+                    }
+                }
+                tbody {
+                    tr {
+                        td.left {
+                            background-color: green;
+                        }
+                        td.center {
+                            background-color: gray;
+                            p {
+                                padding: 10px;
+                            }
+                        }
+                        td.right {
+                            background-color:red;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*FLOAT LAYOUT*/
+.floats {
+    .container {
+        width: 90%;
+        margin: 0 auto;
+        margin-top:20px;
+        border: 1px solid #ccc;
+        .header {
+            height: 50px;
+        }
+        .main {
+            height: 450px;
+            margin-bottom: 0;
+            .left,.center,.right {
+                height: 450px;
+                display:inline-block;
+                float: left;
+                padding: 0;
+                margin:0;
+            }
+            .center {
+                width: 50%;
+                background-color: gray;
+                p {
+                    padding: 10px;
+                }
+            }
+            .left {
+                width: 25%;
+                background-color: green;
+            }
+            .right {
+                width: 25%;
+                background-color: red;
+            }
+        }
+    }
+}
+
+/*FLEXBOX LAYOUT*/
+.flexbox {
+    display:flex;
+    flex-direction: column;
+    height: 500px;
+    width: 90%;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+    margin-top: 20px;
+    header {
+        height: 50px;
+        flex: 1 auto;
+    }
+    main {
+        flex: 1 auto;
+        display:flex;
+        flex-direction: row;
+        height: 450px;
+        transition: 1s;
+        section.left {
+            flex: 1 25%;
+            order: 1;
+            background-color: green;
+        }
+        section.center {
+            flex: 1 50%;
+            order: 3;
+            background-color: gray;
+            p {
+                padding: 10px;
+            }
+        }
+        section.right {
+            order: 2;
+            flex: 1 25%;
+            background-color: red;
+        }
+    }
+}
+
+h4 {
+    margin:0;
+    line-height:50px;
+    padding: 0px 20px;
+}
+
+/*APP NAV LAYOUT*/
+.page {
+    header {
+        height: 50px;
+        border-bottom: 1px solid #ccc;
+        nav {
+            height: 50px;
+            width: 400px;
+            padding: 0px 10px;
+            display: flex;
+            flex-direction:row;
+            a {
+                flex: 1 auto;
+                line-height: 47px;
+                height: 47px;
+                color: #191818;
+                font-size: 1.5em;
+                text-decoration:none;
+                text-align:center;
+                border-bottom: 3px solid transparent;
+                &:hover {
+                    background-color:#f7f7f7;
+                }
+                &.selected {
+                    border-bottom-color: #780606;
+                }
+            }
+        }
+    }
+}
